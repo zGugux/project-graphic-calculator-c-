@@ -5,20 +5,15 @@
 CC = gcc
 #LDFLAGS = -pthread -lpthread -lrt
 
-ifdef debug
-CFLAGS = -Wall -Werror -std=c11 -D_POSIX_THREAD_SEMANTICS -DDEBUG
-else
-CFLAGS = -Wall -Werror -std=c11 -D_POSIX_THREAD_SEMANTICS
-endif
-
+CPP = gpp
 TARGET = main
+SRC = $(TARGET).cpp
+OBJ = $(TARGET)
 
-ALL = $(TARGET)
+all: $(OBJ)
 
-all: $(TARGET)
-
-$(TARGET): $(TARGET).c
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c $(LDFLAGS)
+$(OBJ): $(SRC)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	$(RM) $(TARGET)

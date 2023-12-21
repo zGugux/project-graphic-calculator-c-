@@ -33,4 +33,5 @@ def plotar_polinomio(coeficientes):
 
 
 coeficientes = []
- plotar_polinomio(coeficientes) 
+plotar_polinomio(coeficientes)
+ 
